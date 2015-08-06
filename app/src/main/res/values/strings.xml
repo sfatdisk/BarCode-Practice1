@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AppContacts</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- EditContactFragment -->
+    <string name="name">Name: </string>
+    <string name="firstName">First Name</string>
+    <string name="surname">Surname</string>
+    <string name="phone">Phone: </string>
+    <string name="phoneNumber">Phone number</string>
+    <string name="email">Email: </string>
+    <string name="emailAddress">Email Address</string>
+    <string name="btnSave">Save</string>
+
+    <!-- ListContactFragment -->
+    <string name="btnAdd">Add a New Contact</string>
+
+    <!-- DisplayContactFragment -->
+    <string name="btnClose">Close</string>
+    <string name="btnRandom">Get Random Address</string>
+
+    <string name="user_info_saved"> User information has been saved </string>
+
+
+</resources>

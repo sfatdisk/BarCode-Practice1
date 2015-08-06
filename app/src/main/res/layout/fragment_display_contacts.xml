@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- WebView to display user information-->
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:textSize="24sp"
+        android:textColor="@color/green"
+        android:background="@color/purple">
+
+    </TextView>
+
+    <!-- Button - go back to previous -->
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/btnClose"
+        android:layout_weight="2"/>
+
+    <!-- Button - get random address  -->
+
+    <Button
+        android:id="@+id/btnRandom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/btnRandom"
+        android:layout_weight="2"/>
+
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Apostrophe http://stackoverflow.com/questions/5657047/error-in-strings-xml-file-in-android -->
+
+    <string-array name="firstName">
+        <item>Andrew</item>
+        <item>Beatrice</item>
+        <item>Brent</item>
+        <item>Burt</item>
+    </string-array>
+
+    <string-array name="surname">
+        <item>Berkley</item>
+        <item>Smithline</item>
+        <item>O\'Connor</item>
+        <item>Lindham</item>
+    </string-array>
+
+    <string-array name="phone">
+        <item>917-450-6452</item>
+        <item>917-450-6453</item>
+        <item>917-450-6454</item>
+        <item>917-450-6455</item>
+    </string-array>
+
+    <string-array name="email">
+        <item>aberkley@company.com</item>
+        <item>bsmithline@company.com</item>
+        <item>bo\'connor@company.com</item>
+        <item>blindham@company.com</item>
+    </string-array>
+
+
+</resources>
