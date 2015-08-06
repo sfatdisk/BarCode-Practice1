@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements FragmentTransitListener, O
     private ListContactFragment    mListContactFragment;
 
 
+   // test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
