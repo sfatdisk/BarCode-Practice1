@@ -5,8 +5,9 @@ App Contacts
 App Contacts is a simple project to add contacts in SQLite database and dispaly all contacts on the main screen.
 Also, user can press random access button to randomly pick one contact in the SQLite database.
 
-Here is what it looks like: 
+Here is what it looks like:
 
+![Output Sample](https://github.com/sfatdisk/BarCode-Practice1/blob/master/AppContacts.gif)
 
 
 Project highlights: 
