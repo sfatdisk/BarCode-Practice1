@@ -1,4 +1,14 @@
 
+App Contacts
+============
+
+App Contacts is a simple project to add contacts in SQLite database and dispaly all contacts on the main screen.
+Also, user can press random access button to randomly pick one contact in the SQLite database.
+
+Here is what it looks like: 
+
+
+
 Project highlights: 
 
 1. Demonstrated OOP concepts in Java. 
