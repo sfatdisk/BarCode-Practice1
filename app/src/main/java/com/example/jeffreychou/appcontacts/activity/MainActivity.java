@@ -86,7 +86,10 @@ public class MainActivity extends Activity implements FragmentTransitListener, O
         mFragmentTransaction= mFragmentManager.beginTransaction();
 
         mListContactFragment = new ListContactFragment();
-        mFragmentTransaction.replace(R.id.fragment_container, mListContactFragment, AppConstant.TAG_LIST_CONTACT_FRAGMENT);
+        mFragmentTransaction
+                .replace(R.id.fragment_container,
+                        mListContactFragment,
+                        AppConstant.TAG_LIST_CONTACT_FRAGMENT);
 
         mFragmentTransaction.commit();
     }
@@ -97,7 +100,10 @@ public class MainActivity extends Activity implements FragmentTransitListener, O
         mFragmentTransaction= mFragmentManager.beginTransaction();
 
         mEditContactFragment = new EditContactFragment();
-        mFragmentTransaction.replace(R.id.fragment_container, mEditContactFragment, AppConstant.TAG_EDIT_CONTACT_FRAGMENT);
+        mFragmentTransaction
+                .replace(R.id.fragment_container,
+                        mEditContactFragment,
+                        AppConstant.TAG_EDIT_CONTACT_FRAGMENT);
 
         mFragmentTransaction.commit();
     }
@@ -121,13 +127,16 @@ public class MainActivity extends Activity implements FragmentTransitListener, O
     private void restoreState(Bundle savedInstanceState){
         //TODO - Restore saved instance state
         mListContactFragment=
-                (ListContactFragment)mFragmentManager.findFragmentByTag( savedInstanceState.getString(AppConstant.TAG_LIST_CONTACT_FRAGMENT) );
+                (ListContactFragment)mFragmentManager
+                        .findFragmentByTag( savedInstanceState.getString(AppConstant.TAG_LIST_CONTACT_FRAGMENT) );
 
         mEditContactFragment=
-                (EditContactFragment)mFragmentManager.findFragmentByTag( savedInstanceState.getString(AppConstant.TAG_EDIT_CONTACT_FRAGMENT) );
+                (EditContactFragment)mFragmentManager
+                        .findFragmentByTag( savedInstanceState.getString(AppConstant.TAG_EDIT_CONTACT_FRAGMENT) );
 
         mDisplayContactFragment=
-                (DisplayContactFragment)mFragmentManager.findFragmentByTag( savedInstanceState.getString(AppConstant.TAG_DISPLAY_CONTACT_FRAGMENT) );
+                (DisplayContactFragment)mFragmentManager
+                        .findFragmentByTag( savedInstanceState.getString(AppConstant.TAG_DISPLAY_CONTACT_FRAGMENT) );
     }
 
     // --- overflow Menu item
@@ -182,8 +191,10 @@ public class MainActivity extends Activity implements FragmentTransitListener, O
         args.putInt(DatabaseHelper.TABLE_USER,size);
         mDisplayContactFragment.setArguments(args);
 
-        mFragmentTransaction.replace(R.id.fragment_container, mDisplayContactFragment, AppConstant.TAG_DISPLAY_CONTACT_FRAGMENT);
-        mFragmentTransaction.commit();
+        mFragmentTransaction
+                .replace(R.id.fragment_container,
+                        mDisplayContactFragment,
+                        AppConstant.TAG_DISPLAY_CONTACT_FRAGMENT).commit();
 
     }
 

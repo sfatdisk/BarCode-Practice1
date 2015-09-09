@@ -33,6 +33,13 @@ public class EditContactFragment extends Fragment implements View.OnClickListene
     private long userId;
 
     @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        // Preserve across reconfigurations
+        setRetainInstance(true); // if command this line, still keep scroll position, WHY??
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         final View mRootView= inflater.inflate(R.layout.fragment_edit_contact, container, false);
@@ -81,12 +88,15 @@ public class EditContactFragment extends Fragment implements View.OnClickListene
             Uri updateUri= ContentUris.withAppendedId( ContactProvider.CONTENT_URI, userId);
 
             int count= getActivity().getContentResolver().update(updateUri, values, null, null);
+
             if( count!=1){
                 throw new IllegalStateException("Unable to update "+userId );
             }
         }
         // remind user the information saved
         Toast.makeText(getActivity(), getString(R.string.user_info_saved),Toast.LENGTH_SHORT);
+
+        //TODO -- make keyboard hidden
     }
 
 }

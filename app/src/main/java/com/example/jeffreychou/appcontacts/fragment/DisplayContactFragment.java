@@ -53,6 +53,9 @@ public class DisplayContactFragment extends Fragment implements LoaderManager.Lo
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Preserve across reconfigurations
+        setRetainInstance(true); // if command this line, still keep scroll position, WHY??
+
         args = getArguments();
         // use loader to query data from database in background thread
         getLoaderManager().initLoader(0, args, this);  // 2nd param:Bundle
@@ -89,7 +92,9 @@ public class DisplayContactFragment extends Fragment implements LoaderManager.Lo
             randomId= getRandomId(tableSize);
             Log.d("randomAddress",  "randomId= " + randomId + "\n" + "tableSize=" + tableSize);
             data= ContentUris.withAppendedId(ContactProvider.CONTENT_URI,randomId);
+
         }else{
+
             data= ContentUris.withAppendedId(ContactProvider.CONTENT_URI,userId);
         }
 

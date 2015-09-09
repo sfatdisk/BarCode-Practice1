@@ -47,10 +47,13 @@ public class ListContactFragment extends Fragment implements LoaderManager.Loade
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Preserve across reconfigurations
+        setRetainInstance(true); // if command this line, still keep scroll position, WHY??
 
         adapter = new UserListAdapter();
         // use loader to query data from database in background thread
-        getLoaderManager().initLoader(0, null, this);
+        getLoaderManager()
+                .initLoader(0, null, this); // initLoader create a background thread to load data
     }
 
     @Override
@@ -68,22 +71,27 @@ public class ListContactFragment extends Fragment implements LoaderManager.Loade
         mRecyclerView.setLayoutManager(
                 new LinearLayoutManager(getActivity()));
 
-        return v;
+        return v;  // return v to the method onViewCreated then go to onStart()
     }
 
     // --- CursorLoader ---
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        return new CursorLoader(getActivity(), ContactProvider.CONTENT_URI, null, null, null,null);
+        // create a background thread to load data -- new CursorLoader
+        return new CursorLoader( getActivity(), ContactProvider.CONTENT_URI, null, null, null,null);
+        // return cursor to onLoadFinished
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        adapter.swapCursor(data);
+        // onLoadFinished is a callback implemented by fragment
+        // to notify data load successfully so that you can update data !!
+        adapter.swapCursor(data); // update Adapter
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
+        // This method is called when the loader is being reset or shot down
         adapter.swapCursor(null);
     }
 
